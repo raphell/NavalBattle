@@ -5,7 +5,7 @@ public class Game {
 	private Player player2;
 	
 	public Game(int j1, int j2){
-		System.out.println("Joueur 1 : rentrez les coordonnees de vos bateaux");
+		System.out.println("Player 1 : enter the coordinates of your ships");
 		switch (j1) {
 	        case 1:  this.player1 = new HumanPlayer();
 	                 break;
@@ -17,7 +17,7 @@ public class Game {
 	                 break;
 		}
 		
-		System.out.println("Joueur 2 : rentrez les coordonnees de vos bateaux");
+		System.out.println("Player 2 : enter the coordinates of your ships");
 		switch (j2) {
 			case 1:  this.player2 = new HumanPlayer();
 			        break;

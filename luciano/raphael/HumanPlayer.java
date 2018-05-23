@@ -9,7 +9,6 @@ public class HumanPlayer implements Player{
 	
 	
 	HumanPlayer(){
-		System.out.println("Human player constructor");
 		this.shipGrid = new GridForShip(TOTAL_NUMBER_OF_SHIP);
 		this.shotGrid = new Grid();
 		this.nbrOfShipAlive = this.shipGrid.getNumberMaxOfShips() ;
