@@ -55,6 +55,7 @@ public class Game {
 			System.out.println("/////////////////         PLAYER  2       /////////////////////////////////////");
 		}
 		
+		
 		jActif.displayGrids() ;
 		
 		Shot tir = jActif.shoot() ;

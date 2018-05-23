@@ -2,41 +2,23 @@ package fr.battleship;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import luciano.raphael.BotPlayerLevel1;
-import luciano.raphael.BotPlayerLevel2;
-import luciano.raphael.BotPlayerLevel3;
 import luciano.raphael.Game;
-import luciano.raphael.Player;
 
 
 public class TestIA {
-	Player easy ;
-	Player medium ;
-	Player hard ;
-	int scoreEasyAgainstMedium;
-	int scoreMediumAgainstEasy;
-	int scoreMediumAgainstHard;
-	int scoreHardAgainstMedium;
-	int scoreEasyAgainstHard;
-	int scoreHardAgainstEasy;
-	Game game ;
-	boolean invert;
 	
-	TestIA(){
-		easy = new BotPlayerLevel1();
-		medium = new BotPlayerLevel2();
-		hard = new BotPlayerLevel3();
+	public static void main(String[] args){
+		int scoreEasyAgainstMedium = 0;
+		int scoreMediumAgainstEasy = 0;
 		
-		scoreEasyAgainstMedium = 0;
-		scoreMediumAgainstEasy = 0;
+		int scoreMediumAgainstHard = 0;
+		int scoreHardAgainstMedium = 0;
 		
-		scoreMediumAgainstHard = 0;
-		scoreHardAgainstMedium = 0;
+		int scoreEasyAgainstHard = 0;
+		int scoreHardAgainstEasy = 0;
 		
-		scoreEasyAgainstHard = 0;
-		scoreHardAgainstEasy = 0;
-		
-		invert = false;
+		boolean invert = false;
+		Game game ;
 		
 		//TODO voir ou gerer l'inversion du joueur qui commence, ici ou dans game ?
 		

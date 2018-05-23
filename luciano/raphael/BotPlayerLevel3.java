@@ -62,15 +62,30 @@ public class BotPlayerLevel3 extends BotPlayer{
 	
 	@Override
 	public Shot shoot() {
+		if(this.firstSucceedShot!=null){
+			System.out.println("firstX :"+this.firstSucceedShot.getShotX());
+			System.out.println("firstY :"+this.firstSucceedShot.getShotY());
+		}
+		if(this.secondSucceedShot!=null){
+			System.out.println("secondX :"+this.firstSucceedShot.getShotX());
+			System.out.println("secondY :"+this.firstSucceedShot.getShotY());
+		}
+		System.out.println("direction :"+this.direction);
+		System.out.println("tryshot :"+this.tryShot);
+		System.out.println("side :"+this.side);
+
 		boolean valid = false;
 		char dir;
 		int x = 0;
 		int y = 0;
-		Shot first = this.getFirstSucceedShot();
-		Shot second = this.getSecondSucceedShot();
+		Shot first ;
+		Shot second ;
 		
 		while(!valid){
+			first = this.getFirstSucceedShot();
+			second = this.getSecondSucceedShot();
 			if(first==null){						//no ship spotted
+				System.out.println("no ship");
 				 x = (int)(Math.random()*10);
 				 y = (int)(Math.random()*10);
 				 while(this.getShotGrid().alreadyShot(x, y)){		//it understand it's a bad idea to shoot at a box it already shot before
@@ -80,52 +95,61 @@ public class BotPlayerLevel3 extends BotPlayer{
 				 valid = true;
 			}
 			else if(second==null){					//a ship is spotted but it doesn't know where to shot after, so it tries all position around
+				System.out.println("");
+				System.out.println("have a first ship");
+				System.out.println("tryshot :"+this.tryShot);
+				System.out.println("direction :"+this.direction);
+				if(this.firstSucceedShot!=null){
+					System.out.println("firstX :"+this.firstSucceedShot.getShotX());
+					System.out.println("firstY :"+this.firstSucceedShot.getShotY());
+				}
+				else{
+					System.out.println("first ship is null");
+				}
+				System.out.println("first :"+first);
+				
 				if (this.getTryShot()==0 ){
+					System.out.println("tries to shot below the firstSucceedShot");
 					if((first.getShotY()+1)<10){
 						x = first.getShotX();		//tries to shot below the firstSucceedShot
 				 		y = first.getShotY()+1;
-				 		this.setTryShot(this.getTryShot()+1);
 				 		valid = true;
 					}
-					else{
-						this.setTryShot(this.getTryShot()+1);
-					}
+					this.setTryShot(this.getTryShot()+1);
 				}
 				else if(this.getTryShot()==1 ){
+					System.out.println("try to shot to the right of the firstSucceedShot");
 					if((first.getShotX()+1)<10){
 						x = first.getShotX()+1;		//try to shot to the right of the firstSucceedShot
 				 		y = first.getShotY();
-				 		this.setTryShot(this.getTryShot()+1);
 				 		valid = true;
 					}
-					else{
-						this.setTryShot(this.getTryShot()+1);
-					}
+					this.setTryShot(this.getTryShot()+1);
 				}
 				else if(this.getTryShot()==2 ){
+					System.out.println("try to shot above the firstSucceedShot");
 					if((first.getShotY()-1)>=0){
 						x = first.getShotX();		//try to shot above the firstSucceedShot
 				 		y = first.getShotY()-1;
-				 		this.setTryShot(this.getTryShot()+1);
 				 		valid = true;
 					}
-					else{
-						this.setTryShot(this.getTryShot()+1);
-					}
+					this.setTryShot(this.getTryShot()+1);
 				}
 				else if(this.getTryShot()==3 ){
+					System.out.println("try to shot to the left of the firstSucceedShot");
 					if((first.getShotX()-1)>=0){
 						x = first.getShotX()-1;		//try to shot to the left of the firstSucceedShot
 				 		y = first.getShotY();
-				 		this.setTryShot(this.getTryShot()+1);
 				 		valid = true;
 					}
+					this.setTryShot(this.getTryShot()+1);
 				}
 				else{
-					this.firstSucceedShot = null;
+					this.setFirstSucceedShot(null);
 				}
 			}
 			else{				//we already have a direction to test
+				System.out.println("have a direction");
 				dir = this.getDirectionShot();
 				side = this.getSide();
 				if(dir=='U'){		//vertical direction, first is below second
@@ -238,6 +262,8 @@ public class BotPlayerLevel3 extends BotPlayer{
 				valid=false;
 			}
 		}
+		System.out.println("newX :"+x);
+		System.out.println("newY :"+y);
 		return new Shot(x,y);
 	}
 
