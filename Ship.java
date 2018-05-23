@@ -1,3 +1,4 @@
+package luciano.raphael;
 
 public class Ship {
 

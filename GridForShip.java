@@ -1,3 +1,4 @@
+package luciano.raphael;
 
 public class GridForShip extends Grid {
 	
@@ -61,7 +62,7 @@ public class GridForShip extends Grid {
 		Square[] shipBoxes = ship.getShipBoxes();
 		boolean valid = true ;
 		int cX, cY;
-		for (int j=0 ; j<lenght ; j=j+1){				//on verifie pour chaque case si un bateau est deja sur cette case
+		for (int j=0 ; j<lenght ; j=j+1){				//on verifie pour chaque case si un bateau est deja sur cette case
 			cX = shipBoxes[j].getX() ;
 			cY = shipBoxes[j].getY() ;
 			if (estOccupe(cX, cY)){

@@ -1,5 +1,13 @@
+package fr.battleship;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import luciano.raphael.BotPlayerLevel1;
+import luciano.raphael.BotPlayerLevel2;
+import luciano.raphael.BotPlayerLevel3;
+import luciano.raphael.Game;
+import luciano.raphael.Player;
+
 
 public class TestIA {
 	Player easy ;

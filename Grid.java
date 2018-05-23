@@ -1,3 +1,4 @@
+package luciano.raphael;
 public class Grid {
 	protected int shotTab[];
 	
@@ -39,7 +40,7 @@ public class Grid {
 				System.out.print("~");	//c'est de l'eau
 			}
 			else if(getCase(i)==1){
-				System.out.print("o");	//tir raté
+				System.out.print("o");	//tir rate
 			}
 			else if(getCase(i)==2){
 				System.out.print("X");		//tir reussi
