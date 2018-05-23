@@ -1,9 +1,10 @@
+package luciano.raphael;
 
 public class Game {
 	private Player player1 ;
 	private Player player2;
 	
-	Game(int j1, int j2){
+	public Game(int j1, int j2){
 		System.out.println("Joueur 1 : rentrez les coordonnees de vos bateaux");
 		switch (j1) {
 	        case 1:  this.player1 = new HumanPlayer();

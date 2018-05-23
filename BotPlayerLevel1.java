@@ -1,6 +1,7 @@
+package luciano.raphael;
 
 public class BotPlayerLevel1 extends BotPlayer{
-	BotPlayerLevel1(){
+	public BotPlayerLevel1(){
 		super();
 	}
 

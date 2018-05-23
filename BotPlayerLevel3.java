@@ -1,3 +1,4 @@
+package luciano.raphael;
 
 public class BotPlayerLevel3 extends BotPlayer{
 	
@@ -7,7 +8,7 @@ public class BotPlayerLevel3 extends BotPlayer{
 	private boolean side;
 	private int tryShot ;
 	
-	BotPlayerLevel3(){
+	public BotPlayerLevel3(){
 		super();
 		this.firstSucceedShot = null;
 		this.secondSucceedShot = null;
